@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Automation Experts Blog - Insights, trends, and best practices for business automation, AI implementation, and digital transformation.">
+    <meta name="keywords" content="AI automation blog, business automation trends, workflow automation insights, digital transformation, AI implementation">
+    <meta name="author" content="AI Automation Experts">
+    <title>Blog - AI Automation Experts</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+        }
+        
+        .primary-color {
+            color: #FF5A5F;
+        }
+        
+        .bg-primary {
+            background-color: #FF5A5F;
+        }
+        
+        .bg-secondary {
+            background-color: #1A1A1A;
+        }
+        
+        .bg-accent {
+            background-color: #FFD166;
+        }
+        
+        .text-accent {
+            color: #FFD166;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF7A7F 100%);
+        }
+        
+        .gradient-dark {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .transition-smooth {
+            transition: all 0.3s ease-out;
+        }
+        
+        .hover-lift:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-primary {
+            background-color: #FF5A5F;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease-out;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 90, 95, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #FFD166;
+            color: #1A1A1A;
+            border-radius: 9999px;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease-out;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 209, 102, 0.3);
+        }
+        
+        .card-soft {
+            border-radius: 1rem;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-out;
+        }
+        
+        .card-soft:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease-out;
+            display: inline-block;
+        }
+        
+        .faq-answer {
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+        }
+        
+        .faq-answer.hidden {
+            display: none;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease-out;
+        }
+        
+        .mobile-menu.hidden {
+            display: none;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF7A7F 100%);
+            border-radius: 1rem;
+        }
+        
+        .icon-wrapper svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+            stroke-width: 2;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-8 md:px-16 py-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="https://test-acc-12349.github.io/ai-automation-experts-2025-11-10-2fz71" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                    <i class="fas fa-bolt text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-bold text-gray-900">AutoAI</span>
+            </a>
+            
+            <!-- Back Link -->
+            <a href="https://test-acc-12349.github.io/ai-automation-experts-2025-11-10-2fz71" class="text-gray-700 font-medium hover:text-red-500 transition-smooth flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-white via-gray-50 to-gray-100 py-20 md:py-32 overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-20 left-10 w-72 h-72 bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
+                    Our <span class="text-red-500">Blog</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 font-medium mb-6 leading-relaxed">
+                    Insights, Trends, and Best Practices in AI Automation
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    Discover cutting-edge strategies, real-world case studies, and expert insights on how businesses are transforming their operations with intelligent automation. Learn from industry leaders and stay ahead of the automation revolution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Blog Post Section -->
+    <section class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="mb-16 md:mb-24">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-12">
+                    Latest Post
+                </h2>
+                
+                <!-- Featured Post Card -->
+                <div class="card-soft p-8 md:p-12 hover-lift overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+                        <!-- Featured Post Content -->
+                        <div class="lg:col-span-2">
+                            <div class="flex items-center gap-4 mb-6">
+                                <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-semibold">Featured</span>
+                                <span class="text-gray-500 text-sm font-medium flex items-center gap-2">
+                                    <i class="fas fa-calendar"></i>
+                                    November 10, 2025
+                                </span>
+                            </div>
+                            
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                                The Future of Business Automation: How AI is Transforming Operations
+                            </h3>
+                            
+                            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                                AI automation is revolutionizing business operations across industries, delivering transformative results: 60% cost reductions, 95% error elimination, and 24/7 operations. Unlike traditional automation, AI-powered systems learn and adapt over time, handling complex decisions intelligently. This comprehensive guide explores the key benefits, real-world applications, and strategic implementation approaches that are reshaping how enterprises operate.
+                            </p>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4 items-start">
+                                <a href="https://test-acc-12349.github.io/ai-automation-experts-2025-11-10-2fz71/blog/the-future-of-business-automation-how-ai-is-transf.html" class="btn-primary flex items-center justify-center gap-2">
+                                    <span>Read Full Article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="flex items-center gap-3 text-gray-600">
+                                    <i class="fas fa-clock text-red-500"></i>
+                                    <span class="text-sm font-medium">8 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Featured Post Image -->
+                        <div class="lg:col-span-1 hidden lg:block">
+                            <div class="relative w-full h-64 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl overflow-hidden shadow-lg">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-chart-line text-white text-5xl mb-3 opacity-80"></i>
+                                        <p class="text-white text-sm font-semibold">Automation Insights</p>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 right-4 w-16 h-16 bg-yellow-300 rounded-full opacity-30"></div>
+                                <div class="absolute bottom-4 left-4 w-20 h-20 bg-white rounded-full opacity-10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories Section -->
+    <section class="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+                    Explore Our Content
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Browse our collection of articles organized by topic to find the insights most relevant to your business
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Category 1: Implementation -->
+                <div class="card-soft p-8 md:p-10 hover-lift">
+                    <div class="icon-wrapper mb-6">
+                        <svg data-lucide="wrench" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Implementation Guides</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Step-by-step guides and best practices for implementing AI automation solutions in your organization. Learn from successful deployments and avoid common pitfalls.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Getting Started with Automation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Change Management Strategies</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">ROI Calculation Methods</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Category 2: Industry Trends -->
+                <div class="card-soft p-8 md:p-10 hover-lift">
+                    <div class="icon-wrapper mb-6">
+                        <svg data-lucide="trending-up" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Industry Trends</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Stay updated with the latest trends, market insights, and emerging technologies shaping the future of business automation across all sectors.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Market Analysis & Forecasts</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Technology Breakthroughs</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Competitive Landscape</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Category 3: Case Studies -->
+                <div class="card-soft p-8 md:p-10 hover-lift">
+                    <div class="icon-wrapper mb-6">
+                        <svg data-lucide="briefcase" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Case Studies</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Real-world success stories showcasing how leading organizations transformed their operations and achieved remarkable results with AI automation.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Financial Services Success</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Healthcare Transformation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span class="text-gray-700">Retail & E-Commerce</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Posts Section -->
+    <section class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+                    Coming Soon
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    More insightful articles and resources are being prepared. Check back regularly for fresh content
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Placeholder 1 -->
+                <div class="card-soft p-8 md:p-10 opacity-75">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-semibold">Coming Soon</span>
+                        <span class="text-gray-500 text-sm font-medium">Expected: November 2025</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                        Advanced AI Integration: Building Intelligent Workflows
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Discover advanced techniques for integrating AI into complex business workflows and creating intelligent systems that adapt to your evolving needs.
+                    </p>
+                    <button disabled class="btn-primary opacity-50 cursor-not-allowed">
+                        Coming Soon
+                    </button>
+                </div>
+                
+                <!-- Placeholder 2 -->
+                <div class="card-soft p-8 md:p-10 opacity-75">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-semibold">Coming Soon</span>
+                        <span class="text-gray-500 text-sm font-medium">Expected: December 2025</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                        Security & Compliance in Automated Systems
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Comprehensive guide to ensuring your automation systems meet industry compliance standards and maintain the highest security protocols.
+                    </p>
+                    <button disabled class="btn-primary opacity-50 cursor-not-allowed">
+                        Coming Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="relative py-20 md:py-32 bg-cover bg-center" style="background-image: linear-gradient(135deg, rgba(255, 90, 95, 0.85) 0%, rgba(26, 26, 26, 0.85) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-500/90 to-gray-900/90"></div>
+        
+        <div class="relative max-w-4xl mx-auto px-8 md:px-16 text-center">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                Stay Updated with Automation Insights
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-100 mb-10 leading-relaxed max-w-2xl mx-auto">
+                Subscribe to our newsletter and receive the latest articles, industry trends, and automation tips delivered directly to your inbox.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email address" 
+                    class="flex-1 px-6 py-4 rounded-full border-none focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                >
+                <button class="btn-primary bg-yellow-400 text-gray-900 hover:bg-yellow-300 flex items-center justify-center gap-2 whitespace-nowrap">
+                    <span>Subscribe</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <p class="text-gray-200 text-sm mt-6">
+                We respect your privacy. Unsubscribe at any time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">AutoAI</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Transforming businesses through intelligent AI automation. Simplify operations, reduce costs, and accelerate growth.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition-smooth">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition-smooth">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition-smooth">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition-smooth">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://test-acc-12349.github.io/ai-automation-experts-2025-11-10-2fz71#features" class="text-gray-400 hover:text-red-500 transition-smooth">Features</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-automation-experts-2025-11-10-2fz71#benefits" class="text-gray-400 hover:text-red-500 transition-smooth">Benefits</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-automation-experts-2025-11-10-2fz71#testimonials" class="text-gray-400 hover:text-red-500 transition-smooth">Testimonials</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-automation-experts-2025-11-10-2fz71#about" class="text-gray-400 hover:text-red-500 transition-smooth">About Us</a></li>
+                        <li><a href="https://test.com" class="text-gray-400 hover:text-red-500 transition-smooth">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="blog.html" class="text-gray-400 hover:text-red-500 transition-smooth">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500 transition-smooth">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500 transition-smooth">API Reference</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500 transition-smooth">Support Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500 transition-smooth">Community</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-red-500 transition-smooth">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-red-500 transition-smooth">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500 transition-smooth">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500 transition-smooth">Security</a></li>
+                        <li><a href="mailto:admin@test.com" class="text-gray-400 hover:text-red-500 transition-smooth">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 pt-8 md:pt-12">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <p class="text-gray-400 text-center md:text-left">
+                        &copy; 2025 AI Automation Experts. All rights reserved. | Powered by advanced AI technology
+                    </p>
+                    <div class="flex items-center gap-8">
+                        <a href="privacy.html" class="text-gray-400 hover:text-red-500 transition-smooth text-sm">Privacy</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-red-500 transition-smooth text-sm">Terms</a>
+                        <a href="blog.html" class="text-gray-400 hover:text-red-500 transition-smooth text-sm">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
